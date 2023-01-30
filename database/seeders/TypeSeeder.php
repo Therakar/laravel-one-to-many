@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Type;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 class TypeSeeder extends Seeder
@@ -16,7 +17,9 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         Type::truncate(); //cancella tutti i dati della tabella Types
+        Schema::disableForeignKeyConstraints();
 
         $types = [
             'Business implementation',
