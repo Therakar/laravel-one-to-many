@@ -33,7 +33,7 @@
                     
                     <p class="card-text"><strong>Customer:</strong> {{$project->customer}}</p>
                     <p class="card-text"><strong>Version:</strong> v{{$project->version}}</p>
-                    <p class="card-text"><strong>Slug:</strong> {{$project->slug}}</p>
+                    <p class="card-text"><strong>Type:</strong> {{$project->type?->name ?: 'No Type'}}</p>
 
                     {{-- BUTTONS --}}
                     <div>
