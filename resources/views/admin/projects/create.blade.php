@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
     <div class="container mt-5">
         <h1>Create a New Project</h1>
         @if ($errors->any())
@@ -30,7 +31,7 @@
                 <label for="description" class="form-label">Description*</label>
                 <textarea class="form-control" id="description" name="description" rows="10" placeholder="Describe your project...">{{old('title')}}</textarea>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 w-25">
                 <label for="cover_image" class="form-label">Cover image</label>
 
                 {{-- image preview --}}
@@ -49,6 +50,15 @@
                 </div>
                 
                 <input type="file" class="form-control" id="cover_image" name="cover_image" value="{{old('cover_image')}}" onchange="loadFile(event)">
+            </div>
+            <div class="mb-3 w-25">
+                <label for="type_id" class="form-label">Type</label>
+                <select name="type_id" id="type_id" class="form-select">
+                    <option value="">No Type</option>
+                    @foreach ($types as $type)
+                        <option value="{{$type->id}}" {{ old('type_id') == $type->id ? 'selected' : ''}}>{{$type->name}}</option>
+                    @endforeach
+                </select>
             </div>
             <button type="submit" class="btn btn-success">Confirm</button>
         </form>

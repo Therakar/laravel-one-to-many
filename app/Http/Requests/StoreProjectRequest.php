@@ -28,7 +28,8 @@ class StoreProjectRequest extends FormRequest
             'description' => 'required|string|max:1500',
             'version' => 'required|numeric|between:0.01,99.99',
             'customer' => 'required|string|max:50',
-            'cover_image' => 'nullable|image|max:4096'
+            'cover_image' => 'nullable|image|max:4096',
+            'type_id' => 'nullable|exists:types,id',
         ];
     }
 }

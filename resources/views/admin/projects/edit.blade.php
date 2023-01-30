@@ -51,7 +51,15 @@
                 <label for="description" class="form-label">Description*</label>
                 <textarea class="form-control" id="description" name="description" rows="10" placeholder="Describe your project...">{{old('description', $project->description)}}</textarea>
             </div>
-
+            <div class="mb-3 w-25">
+                <label for="type_id" class="form-label">Type</label>
+                <select name="type_id" id="type_id" class="form-select">
+                    <option value="">No Type</option>
+                    @foreach ($types as $type)
+                        <option value="{{$type->id}}" {{ old('type_id',$project->type_id) == $type->id ? 'selected' : ''}}>{{$type->name}}</option>
+                    @endforeach
+                </select>
+            </div>
             <button type="submit" class="btn btn-success">Confirm</button>
         </form>
 
