@@ -11,7 +11,7 @@
             @endif
 
             {{-- NEW type BUTTON --}}
-            <a href="{{route('admin.types.create')}}" class="btn btn-success mt-5 mb-3"><i class="fa-solid fa-plus md-1"></i> New Project</a>
+            <a href="{{route('admin.types.create')}}" class="btn btn-success mt-5 mb-3"><i class="fa-solid fa-plus md-1"></i> New Type</a>
         </div>
         
 
