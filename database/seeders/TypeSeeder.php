@@ -19,7 +19,7 @@ class TypeSeeder extends Seeder
     {
         Schema::disableForeignKeyConstraints();
         Type::truncate(); //cancella tutti i dati della tabella Types
-        Schema::disableForeignKeyConstraints();
+        Schema::enableForeignKeyConstraints();
 
         $types = [
             'Business implementation',

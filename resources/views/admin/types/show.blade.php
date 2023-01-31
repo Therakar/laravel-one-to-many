@@ -3,11 +3,11 @@
 @section('content')
     <div class="container">
         <div class="mt-5 mb-3">
-                <h5>{{$type->name}}</h5>
+                <h1>{{$type->name}}</h1>
                 @if (count($type->projects) > 0)
                     <ul>
                         @foreach ($type->projects as $project)
-                            <li><a class="btn btn-primary" href="{{route('admin.projects.show', $project)}}">{{$project->title}}</a></li>
+                            <li class="mb-2"><a class="btn btn-success" href="{{route('admin.projects.show', $project)}}">{{$project->title}}</a></li>
                         @endforeach
                     </ul>
                 @else

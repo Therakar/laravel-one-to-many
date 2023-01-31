@@ -12,6 +12,7 @@ class Type extends Model
     protected $guarded = ['slug'];
 
     public function projects(){
+        
         return $this->hasMany(Project::class);
     }
 }

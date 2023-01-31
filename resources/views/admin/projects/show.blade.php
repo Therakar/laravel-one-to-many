@@ -22,7 +22,15 @@
                 <h5>{{$project->title}}</h5>
                 <p class="card-text"><strong>Customer:</strong> {{$project->customer}}</p>
                 <p class="card-text"><strong>Version:</strong> v{{$project->version}}</p>
-                <p class="card-text"><strong>Type:</strong> {{$project->type?->name ?: 'No Type'}}</p>
+                <p class="card-text"><strong>Type:</strong> 
+                    @if ($project->type)
+                        <a href="{{route('admin.types.show', $project->type)}}">{{$project->type->name}}</a>
+                    @else
+                        No Type
+                    @endif
+                    
+                
+                </p>
                 <p class="card-text"><strong>Description:</strong> {{$project->description}}</p>
                 <div>
                     <a href="{{route('admin.projects.edit', $project->slug)}}" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a>
