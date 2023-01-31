@@ -58,7 +58,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Are you sure to delete the type "{{$type->title}}" ?
+                                Are you sure to delete the type "{{$type->name}}" ?
                             </div>
                             <div class="modal-footer">
                                 <form action="{{route('admin.types.destroy', $type->slug)}}" class="d-inline-block" method="POST">
