@@ -72,7 +72,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        //
+        return view('admin.types.edit', compact('type'));
     }
 
     /**
@@ -84,7 +84,19 @@ class TypeController extends Controller
      */
     public function update(UpdateTypeRequest $request, Type $type)
     {
-        //
+       //prendo i dati
+       $data = $request->validated();
+
+       $old_name = $type->name;
+
+       $type->slug = Str::slug($data['name']);
+
+       //faccio l'update con il mass assignment
+       $type->update($data);
+ 
+       //faccio un redirect a comics.show della risorsa aggiornata
+       return redirect()->route('admin.types.show', $type->slug)->with('message', "$old_name has been modified!");
+
     }
 
     /**
